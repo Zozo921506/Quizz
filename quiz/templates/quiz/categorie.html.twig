@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choose a categorie{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% include 'navbar.html.twig' %}
+<div class="example-wrapper">
+    <h1>Choose a categorie</h1>
+        <ul class = grid>
+            {% for categorie in categories %}
+            <li>
+                <strong><a href = "{{ path('categorie', {name: categorie.name, id: categorie.id})}}">{{ categorie.name }}</a></strong>
+            </li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}

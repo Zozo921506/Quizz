@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inscription</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.Name) }}
+        {{ form_row(form.Firstname) }}
+        {{ form_row(form.Birthdate) }}
+        {{ form_row(form.Email) }}
+        {{ form_row(form.Password) }}
+        {# Ajoutez d'autres champs requis pour l'inscription #}
+
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,61 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+li
+{
+    margin-bottom: 3%;
+}
+
+#bullet
+{
+    list-style: none;
+}
+
+.cursor
+{
+    cursor: pointer;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: white;
+    background-color: darkblue;
+    border: 1px solid blue;
+}
+
+.grid
+{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 8%;
+    list-style: square;
+}
+
+nav
+{
+    background-color: darkblue;
+    padding-top: 1%;
+    margin: 0;
+}
+
+nav ul
+{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav ul li a
+{
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Quiz</h1>
+    <form method = "post" id = "form" action = "{{ path('result', {title: title, id_categorie: id_categorie, name: name, id: id_quizz}) }}">
+        <ul id = "bullet">
+            {% for quiz in quizz %}
+            <li>
+                <h4>{{ quiz.question }}</h4>
+                <ul>
+                    {% for reponse in reponses %}
+                        {% for answer in reponse %}
+                            {% if answer.id_question == quiz.id %}
+                                <li>
+                                    <label for = "{{ answer.id }}">{{ answer.reponse }}</label>
+                                    <input type = "radio" id = "{{ answer.id }}" class = "cursor" name = "reponse_{{ quiz.id }}" value = "{{ answer.id }}" required/>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        <button type = "submit" id = "submit" class = "center"> Result </button>
+    </form>
+</div>
+{% endblock %}
